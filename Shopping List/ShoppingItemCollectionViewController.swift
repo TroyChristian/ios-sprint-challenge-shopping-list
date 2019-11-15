@@ -51,12 +51,12 @@ class ShoppingItemCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCell", for: indexPath) as! ShoppingItemCollectionViewCell 
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCell", for: indexPath) as? ShoppingItemCollectionViewCell else {return UICollectionViewCell()}
     
         // Configure the cell
         let item = shoppingItemListController.itemNames[indexPath.item]
         cell.item = item
-        
+        print(cell.item?.name)
         return cell
     }
 
