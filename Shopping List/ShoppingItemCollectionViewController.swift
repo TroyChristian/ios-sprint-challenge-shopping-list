@@ -8,31 +8,34 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+
 
 class ShoppingItemCollectionViewController: UICollectionViewController {
+    
+    
+    let shoppingItemListController = ShoppingItemListController() 
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(shoppingItemListController.test())
+        
+    
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+     
 
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+       
+       
 
         // Do any additional setup after loading the view.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        collectionView?.reloadData()
     }
-    */
+
+
 
     // MARK: UICollectionViewDataSource
 
@@ -44,14 +47,16 @@ class ShoppingItemCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return shoppingItemListController.itemNames.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+          let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "itemCell", for: indexPath) as! ShoppingItemCollectionViewCell 
     
         // Configure the cell
-    
+        let item = shoppingItemListController.itemNames[indexPath.item]
+        cell.item = item
+        
         return cell
     }
 
@@ -83,6 +88,16 @@ class ShoppingItemCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    }
+    */
+    
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using [segue destinationViewController].
+        // Pass the selected object to the new view controller.
     }
     */
 
