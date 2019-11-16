@@ -10,7 +10,13 @@ import UIKit
 class ShoppingItemListController {
     var shoppingItems: [ShoppingItem] = []
     
-    var itemNames = [ShoppingItem(name:"Apple")  ,ShoppingItem(name:"Grapes"),ShoppingItem(name:"Milk"),ShoppingItem(name:"Muffin"),ShoppingItem(name:"Popcorn"),ShoppingItem(name:"Soda"),ShoppingItem(name: "Strawberries")]
+   var itemNames = [ShoppingItem(name: "Apple"),
+   ShoppingItem(name: "Grapes"),
+   ShoppingItem(name: "Milk"),
+   ShoppingItem(name: "Muffin"),
+   ShoppingItem(name: "Popcorn"),
+   ShoppingItem(name: "Soda"),
+   ShoppingItem(name: "Strawberries")]
   
     
     

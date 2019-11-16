@@ -39,10 +39,8 @@ class ShoppingItemCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
 
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+   
+    
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -56,7 +54,7 @@ class ShoppingItemCollectionViewController: UICollectionViewController {
         // Configure the cell
         let item = shoppingItemListController.itemNames[indexPath.item]
         cell.item = item
-        print(cell.item?.name)
+        
         return cell
     }
 
