@@ -78,7 +78,7 @@
                     <navigationItem key="navigationItem" id="NIf-zP-Piu">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="zaH-At-9LI">
                             <connections>
-                                <segue destination="Mre-hf-IWp" kind="show" id="Cb4-PB-E40"/>
+                                <segue destination="Mre-hf-IWp" kind="show" identifier="nextButton" id="v7r-93-jRB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -143,6 +143,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Bbg-Ut-5nq">
                         <barButtonItem key="backBarButtonItem" title="Change Shopping List" id="78x-0L-fvu"/>
+                        <barButtonItem key="leftBarButtonItem" title="Change Order Selection" id="PLg-t9-oYi"/>
                     </navigationItem>
                     <connections>
                         <outlet property="addressTextField" destination="iUe-hP-lAS" id="MVE-Mg-XmW"/>

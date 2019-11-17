@@ -89,9 +89,9 @@ class ShoppingItemCollectionViewController: UICollectionViewController, Selectio
             
        
         
-        let alert = UIAlertController(title: "\(selectedItem.name) added to cart", message: "\(shoppingItemListController.shoppingItems.count) items in cart", preferredStyle: .alert)
+      /*   let alert = UIAlertController(title: "\(selectedItem.name) added to cart", message: "\(shoppingItemListController.shoppingItems.count) items in cart", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil) */
             
             
             
