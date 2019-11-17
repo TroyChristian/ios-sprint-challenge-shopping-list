@@ -12,7 +12,20 @@ import UIKit
 
 class ShoppingItemCollectionViewController: UICollectionViewController, SelectionDelegate {
     func toggleHasBeenSelected(cell: ShoppingItemCollectionViewCell) {
+        guard let indexPath = collectionView?.indexPath(for: cell) else { return }
+        var item = shoppingItemListController.itemNames[indexPath.item]
+        shoppingItemListController.toggleSelectedState(item)
+        collectionView?.reloadData()
         
+        
+        /*     func toggleHasBeenReadFor(cell: BookTableViewCell) {
+            guard let indexPath = tableView.indexPath(for: cell) else { return }
+            
+            let book = bookFor(indexPath: indexPath)
+            
+            bookController.updateHasBeenRead(for: book)
+            
+            tableView.reloadData()*/
        
     }
     
@@ -22,6 +35,7 @@ class ShoppingItemCollectionViewController: UICollectionViewController, Selectio
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
        
         
     
@@ -68,12 +82,20 @@ class ShoppingItemCollectionViewController: UICollectionViewController, Selectio
         let selectedItem = shoppingItemListController.itemNames[indexPath.item]
         shoppingItemListController.addToShoppingItems(selectedItem)
         if let cell = collectionView.cellForItem(at: indexPath) as? ShoppingItemCollectionViewCell {
-            cell.wasAdded() 
+            cell.delegate = self
+            
+            
+            toggleHasBeenSelected(cell: cell)
+            
        
         
         let alert = UIAlertController(title: "\(selectedItem.name) added to cart", message: "\(shoppingItemListController.shoppingItems.count) items in cart", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
+            
+            
+            
+           
         }
     }
     

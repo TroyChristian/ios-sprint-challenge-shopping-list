@@ -17,6 +17,9 @@ class ShoppingItemCollectionViewCell: UICollectionViewCell {
         
         
     }
+    @IBAction func TEST(_ sender: Any)
+    {delegate?.toggleHasBeenSelected(cell: self)
+    }
     var delegate: SelectionDelegate?
     
        var item: ShoppingItem? {
@@ -27,16 +30,20 @@ class ShoppingItemCollectionViewCell: UICollectionViewCell {
         
         func updateViews() {
             guard let item = item else { return }
-          
             
+            let text = item.selected ? "Added" : "Not Added"
+            addedStatus.text = text 
             itemName.text = item.name
             itemImage.image = item.image
+           
+            
+            
+           
+            
             
         }
     
 
 
-func wasAdded(){
-    addedStatus.text = "Added"
-}
+
 }
