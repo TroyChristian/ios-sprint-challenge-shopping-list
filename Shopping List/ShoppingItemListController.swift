@@ -23,6 +23,13 @@ class ShoppingItemListController {
     func addToShoppingItems(_ shoppingItem: ShoppingItem) {
          shoppingItems.append(shoppingItem)
         
+        func toggleSelectedState(_ shoppingItem: ShoppingItem){
+            
+            guard let index = itemNames.firstIndex(of: shoppingItem) else { return }
+            
+            itemNames[index].selected = !itemNames[index].selected
+        }
+        
       
 }
     

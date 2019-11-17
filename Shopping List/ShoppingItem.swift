@@ -7,7 +7,7 @@
 //
 
 import UIKit
-struct ShoppingItem{
+struct ShoppingItem: Equatable{
     var name: String
     let image: UIImage?
     var selected:Bool
