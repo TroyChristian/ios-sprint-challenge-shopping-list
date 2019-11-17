@@ -8,7 +8,7 @@
 
 import UIKit
 class ShoppingItemListController {
-    var shoppingItems: [ShoppingItem] = []
+   
     
    var itemNames = [ShoppingItem(name: "Apple"),
    ShoppingItem(name: "Grapes"),
@@ -19,9 +19,7 @@ class ShoppingItemListController {
    ShoppingItem(name: "Strawberries")]
   
     
-    func addToShoppingItems(_ item:ShoppingItem){
-        shoppingItems.append(item)
-    }
+  
     
 
     
@@ -36,4 +34,13 @@ class ShoppingItemListController {
     }
 
 
+
+
+    var unselectedItems: [ShoppingItem] {
+        return itemNames.filter({ $0.selected == false })
+    }
+    
+     var shoppingItems: [ShoppingItem] {
+        return itemNames.filter({ $0.selected })
+    }
 }

@@ -13,7 +13,7 @@ import UIKit
 class ShoppingItemCollectionViewController: UICollectionViewController, SelectionDelegate {
     func toggleHasBeenSelected(cell: ShoppingItemCollectionViewCell) {
         guard let indexPath = collectionView?.indexPath(for: cell) else { return }
-        var item = shoppingItemListController.itemNames[indexPath.item]
+        let item = shoppingItemListController.itemNames[indexPath.item]
         shoppingItemListController.toggleSelectedState(item)
         collectionView?.reloadData()
         
@@ -80,7 +80,7 @@ class ShoppingItemCollectionViewController: UICollectionViewController, Selectio
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedItem = shoppingItemListController.itemNames[indexPath.item]
-        shoppingItemListController.addToShoppingItems(selectedItem)
+        //shoppingItemListController.addToShoppingItems(selectedItem)
         if let cell = collectionView.cellForItem(at: indexPath) as? ShoppingItemCollectionViewCell {
             cell.delegate = self
             
