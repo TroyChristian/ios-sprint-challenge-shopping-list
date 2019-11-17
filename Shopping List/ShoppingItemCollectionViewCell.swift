@@ -13,6 +13,7 @@ class ShoppingItemCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var itemName: UILabel!
     @IBOutlet weak var itemImage: UIImageView!
     @IBAction func hiddenButton(_ sender: Any) {
+        print("Hidden Button!")
         
         
     }
@@ -26,17 +27,16 @@ class ShoppingItemCollectionViewCell: UICollectionViewCell {
         
         func updateViews() {
             guard let item = item else { return }
-            if item.selected{
-                addedStatus.text = "Added"
-            } else {
-                addedStatus.text = "Not Added"
-            }
+          
             
             itemName.text = item.name
             itemImage.image = item.image
             
         }
-    }
+    
 
 
-// comment for commit
+func wasAdded(){
+    addedStatus.text = "Added"
+}
+}

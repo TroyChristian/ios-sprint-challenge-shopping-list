@@ -67,6 +67,8 @@ class ShoppingItemCollectionViewController: UICollectionViewController, Selectio
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedItem = shoppingItemListController.itemNames[indexPath.item]
         shoppingItemListController.addToShoppingItems(selectedItem)
+        if let cell = collectionView.cellForItem(at: indexPath) as? ShoppingItemCollectionViewCell {
+            cell.wasAdded() 
        
         
         let alert = UIAlertController(title: "\(selectedItem.name) added to cart", message: "\(shoppingItemListController.shoppingItems.count) items in cart", preferredStyle: .alert)
@@ -111,3 +113,4 @@ class ShoppingItemCollectionViewController: UICollectionViewController, Selectio
     */
 
 
+}
