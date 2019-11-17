@@ -31,6 +31,13 @@
                                     <rect key="frame" x="0.0" y="0.0" width="285" height="285"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7W-WI-9eP">
+                                            <rect key="frame" x="22" y="58" width="241" height="169"/>
+                                            <state key="normal" title="Button"/>
+                                            <connections>
+                                                <action selector="hiddenButton:" destination="FsT-Wk-uaI" eventType="touchUpInside" id="siO-dr-HTX"/>
+                                            </connections>
+                                        </button>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ZiK-bX-AcV">
                                             <rect key="frame" x="22" y="58" width="241" height="169"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -38,9 +45,6 @@
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="169" id="gVl-Xv-S26"/>
                                             </constraints>
-                                            <connections>
-                                                <outletCollection property="gestureRecognizers" destination="av5-YT-QN5" appends="YES" id="8Ov-eh-YDd"/>
-                                            </connections>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JOB-z5-D24">
                                             <rect key="frame" x="122" y="235" width="42" height="20.5"/>
@@ -65,8 +69,12 @@
                                         <constraint firstItem="JOB-z5-D24" firstAttribute="top" secondItem="ZiK-bX-AcV" secondAttribute="bottom" constant="8" id="JYe-sn-dhP"/>
                                         <constraint firstItem="ZiK-bX-AcV" firstAttribute="centerY" secondItem="Oo7-bg-bk0" secondAttribute="centerY" id="OMT-0g-xa1"/>
                                         <constraint firstItem="t0x-av-CVm" firstAttribute="leading" secondItem="Oo7-bg-bk0" secondAttribute="leading" constant="122" id="OwU-vx-fJW"/>
+                                        <constraint firstAttribute="trailing" secondItem="X7W-WI-9eP" secondAttribute="trailing" constant="22" id="Ppz-tY-jLy"/>
                                         <constraint firstItem="ZiK-bX-AcV" firstAttribute="centerX" secondItem="Oo7-bg-bk0" secondAttribute="centerX" id="bGR-XP-ni3"/>
+                                        <constraint firstItem="X7W-WI-9eP" firstAttribute="top" secondItem="t0x-av-CVm" secondAttribute="bottom" constant="8" id="j9N-OO-yd5"/>
+                                        <constraint firstItem="JOB-z5-D24" firstAttribute="top" secondItem="X7W-WI-9eP" secondAttribute="bottom" constant="8" id="sHM-uP-j3c"/>
                                         <constraint firstItem="t0x-av-CVm" firstAttribute="leading" secondItem="JOB-z5-D24" secondAttribute="leading" id="sl3-nR-bWe"/>
+                                        <constraint firstItem="X7W-WI-9eP" firstAttribute="leading" secondItem="Oo7-bg-bk0" secondAttribute="leading" constant="22" id="znQ-ma-VDP"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="285" height="285"/>
@@ -91,7 +99,6 @@
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWQ-BV-Oi0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="av5-YT-QN5"/>
             </objects>
             <point key="canvasLocation" x="1727.536231884058" y="-162.05357142857142"/>
         </scene>

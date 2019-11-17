@@ -10,14 +10,19 @@ import UIKit
 
 
 
-class ShoppingItemCollectionViewController: UICollectionViewController {
+class ShoppingItemCollectionViewController: UICollectionViewController, SelectionDelegate {
+    func toggleHasBeenSelected(cell: ShoppingItemCollectionViewCell) {
+        
+       
+    }
+    
     
     
     let shoppingItemListController = ShoppingItemListController() 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(shoppingItemListController.test())
+       
         
     
 
@@ -53,28 +58,35 @@ class ShoppingItemCollectionViewController: UICollectionViewController {
     
         // Configure the cell
         let item = shoppingItemListController.itemNames[indexPath.item]
+        cell.delegate = self
         cell.item = item
         
         return cell
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let selectedItem = shoppingItemListController.itemNames[indexPath.item]
+        shoppingItemListController.addToShoppingItems(selectedItem)
+       
+        
+        let alert = UIAlertController(title: "\(selectedItem.name) added to cart", message: "\(shoppingItemListController.shoppingItems.count) items in cart", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
+    }
+    
 
     // MARK: UICollectionViewDelegate
 
    
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
     
 
     
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    
 
     
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
+
+  
+   /*
     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
         return true
     }
@@ -85,7 +97,7 @@ class ShoppingItemCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
-    }
+    } */
     
     
     /*
@@ -98,4 +110,4 @@ class ShoppingItemCollectionViewController: UICollectionViewController {
     }
     */
 
-}
+

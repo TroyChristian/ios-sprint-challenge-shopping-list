@@ -16,6 +16,7 @@
 		FB501B04237F1175002BA67C /* ShoppingItemCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB501B03237F1175002BA67C /* ShoppingItemCollectionViewController.swift */; };
 		FB501B06237F1223002BA67C /* ShoppingItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB501B05237F1223002BA67C /* ShoppingItemCollectionViewCell.swift */; };
 		FB620FA72380A5CF002BA1DC /* submitOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB620FA62380A5CF002BA1DC /* submitOrderViewController.swift */; };
+		FB620FA92380F9F2002BA1DC /* SelectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB620FA82380F9F2002BA1DC /* SelectionDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FB501B03237F1175002BA67C /* ShoppingItemCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemCollectionViewController.swift; sourceTree = "<group>"; };
 		FB501B05237F1223002BA67C /* ShoppingItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		FB620FA62380A5CF002BA1DC /* submitOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = submitOrderViewController.swift; sourceTree = "<group>"; };
+		FB620FA82380F9F2002BA1DC /* SelectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				FB501B05237F1223002BA67C /* ShoppingItemCollectionViewCell.swift */,
 				FB620FA62380A5CF002BA1DC /* submitOrderViewController.swift */,
 				FB501B03237F1175002BA67C /* ShoppingItemCollectionViewController.swift */,
+				FB620FA82380F9F2002BA1DC /* SelectionDelegate.swift */,
 				4613E91821143BFD00E7FF73 /* Assets.xcassets */,
 				4613E91A21143BFD00E7FF73 /* LaunchScreen.storyboard */,
 				4613E91D21143BFD00E7FF73 /* Info.plist */,
@@ -152,6 +155,7 @@
 				FB501B00237F0D41002BA67C /* ShoppingItem.swift in Sources */,
 				FB501B04237F1175002BA67C /* ShoppingItemCollectionViewController.swift in Sources */,
 				4613E91221143BFC00E7FF73 /* AppDelegate.swift in Sources */,
+				FB620FA92380F9F2002BA1DC /* SelectionDelegate.swift in Sources */,
 				FB620FA72380A5CF002BA1DC /* submitOrderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
