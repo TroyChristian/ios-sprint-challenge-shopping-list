@@ -78,7 +78,7 @@
                     <navigationItem key="navigationItem" id="NIf-zP-Piu">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="zaH-At-9LI">
                             <connections>
-                                <segue destination="Mre-hf-IWp" kind="show" identifier="nextButton" id="v7r-93-jRB"/>
+                                <segue destination="Mre-hf-IWp" kind="presentation" identifier="nextButton" id="v7r-93-jRB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -92,11 +92,11 @@
             <objects>
                 <viewController id="Mre-hf-IWp" customClass="submitOrderViewController" customModule="Shopping_List" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C2o-Ik-FYu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You currently have X items in your shopping list." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z66-S0-ePy">
-                                <rect key="frame" x="20" y="94" width="401" height="21"/>
+                                <rect key="frame" x="20" y="6" width="401" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="lxu-5n-4zT"/>
                                 </constraints>
@@ -105,23 +105,31 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CIe-PC-S8e">
-                                <rect key="frame" x="63" y="237" width="292" height="34"/>
+                                <rect key="frame" x="63" y="183" width="292" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iUe-hP-lAS">
-                                <rect key="frame" x="63" y="279" width="292" height="34"/>
+                                <rect key="frame" x="63" y="225" width="292" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t38-GZ-l7v">
-                                <rect key="frame" x="161" y="350" width="92" height="83"/>
+                                <rect key="frame" x="161" y="296" width="92" height="83"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="83" id="yyB-ie-2du"/>
                                 </constraints>
                                 <state key="normal" title="Submit Order"/>
                                 <connections>
                                     <action selector="submitOrder:" destination="Mre-hf-IWp" eventType="touchUpInside" id="DlI-On-cxS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ple-BK-oOw">
+                                <rect key="frame" x="13" y="35" width="165" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Change Order Selection"/>
+                                <connections>
+                                    <action selector="changeOrderButton:" destination="Mre-hf-IWp" eventType="touchUpInside" id="JyM-RT-x8W"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -142,8 +150,12 @@
                         <viewLayoutGuide key="safeArea" id="yXt-Xe-bjQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="Bbg-Ut-5nq">
-                        <barButtonItem key="backBarButtonItem" title="Change Shopping List" id="78x-0L-fvu"/>
-                        <barButtonItem key="leftBarButtonItem" title="Change Order Selection" id="PLg-t9-oYi"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="78x-0L-fvu"/>
+                        <barButtonItem key="leftBarButtonItem" title="Change Order Selection" id="PLg-t9-oYi">
+                            <connections>
+                                <action selector="changeOrderButton:" destination="Mre-hf-IWp" id="saY-qe-L0I"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addressTextField" destination="iUe-hP-lAS" id="MVE-Mg-XmW"/>

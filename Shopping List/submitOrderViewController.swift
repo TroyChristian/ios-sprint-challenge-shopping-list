@@ -9,6 +9,10 @@
 import UIKit
 
 class submitOrderViewController: UIViewController {
+    @IBAction func changeOrderButton(_ sender: Any) {
+        dismiss(animated: true)
+        
+    }
     
     
     @IBAction func submitOrder(_ sender: Any) {
