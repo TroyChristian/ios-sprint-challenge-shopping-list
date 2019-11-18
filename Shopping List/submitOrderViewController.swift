@@ -9,15 +9,20 @@
 import UIKit
 
 class submitOrderViewController: UIViewController {
+    
+    
     @IBAction func submitOrder(_ sender: Any) {
     }
     @IBOutlet weak var notifLabel: UILabel!
     @IBOutlet weak var addressTextField: UITextField!
     
     @IBOutlet weak var nameTextField: UITextField!
+     var notiflabelplaceholder:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+       
+        notifLabel.text? = notiflabelplaceholder
         // Do any additional setup after loading the view.
     }
     

@@ -79,13 +79,14 @@ class ShoppingItemCollectionViewController: UICollectionViewController, Selectio
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let selectedItem = shoppingItemListController.itemNames[indexPath.item]
+       // let selectedItem = shoppingItemListController.itemNames[indexPath.item]
         //shoppingItemListController.addToShoppingItems(selectedItem)
         if let cell = collectionView.cellForItem(at: indexPath) as? ShoppingItemCollectionViewCell {
             cell.delegate = self
             
             
             toggleHasBeenSelected(cell: cell)
+            print(shoppingItemListController.shoppingItems.count)
             
        
         
@@ -124,15 +125,17 @@ class ShoppingItemCollectionViewController: UICollectionViewController, Selectio
     } */
     
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "nextButton" {
+            guard let vc = segue.destination as? submitOrderViewController else {return}
+            vc.notiflabelplaceholder = "You currently have \(shoppingItemListController.shoppingItems.count) items in your shopping list"
+        }
     }
-    */
+    
 
 
 }
