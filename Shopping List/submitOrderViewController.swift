@@ -12,6 +12,13 @@ class submitOrderViewController: UIViewController {
     
     
     @IBAction func submitOrder(_ sender: Any) {
+        
+        guard let name = nameTextField.text else {return}
+        guard let address = addressTextField.text else {return}
+          
+        let alert = UIAlertController(title: "Delivery for \(name)", message: "Your items will be delivered to \(address) within 15 minutes", preferredStyle: .alert)
+              alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+              present(alert, animated: true, completion: nil)
     }
     @IBOutlet weak var notifLabel: UILabel!
     @IBOutlet weak var addressTextField: UITextField!

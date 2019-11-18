@@ -132,7 +132,7 @@ class ShoppingItemCollectionViewController: UICollectionViewController, Selectio
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "nextButton" {
             guard let vc = segue.destination as? submitOrderViewController else {return}
-            vc.notiflabelplaceholder = "You currently have \(shoppingItemListController.shoppingItems.count) items in your shopping list"
+            vc.notiflabelplaceholder = "You currently have \(shoppingItemListController.shoppingItems.count) item(s) in your shopping list"
         }
     }
     
